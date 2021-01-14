@@ -13,23 +13,18 @@ public class CollectionStudio {
 
         HashMap<Character, Integer> dict = new HashMap<>();
 
-        for(int i=0; i <charactersInString.length;i++)
-        {
-            if(dict.containsKey(charactersInString[i]))
-            {
-                dict.put(charactersInString[i], dict.get(charactersInString[i])+1);
-            }
-            else
-            {
-                dict.put(charactersInString[i], 1);
+        for (char c : charactersInString) {
+            if (dict.containsKey(c)) {
+                dict.put(c, dict.get(c) + 1);
+            } else {
+                dict.put(c, 1);
             }
         }
+        System.out.println("\n");
 
-        for(Integer ch: dict.values())
-        {
-            System.out.println(ch);
-        }
+        dict.forEach((key, value) -> System.out.println("  "+key + " : " + value));
 
+        System.out.println("\n");
     }
 
 
