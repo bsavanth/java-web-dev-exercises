@@ -22,6 +22,10 @@ public class Menu {
         menu.add(new MenuItem("Apple pie", 6.99, "Jar of apple pie", "dessert", date));
         menu.add(new MenuItem("Chicks plate", 8.99, " 3 chicken fingers, a drink and a side", "main course", date));
 
+
+
+
+
         Menu wholeMenu = new Menu();
         boolean end = true;
         while(end) {
@@ -57,8 +61,16 @@ public class Menu {
 
                 case 5:
 
-                   // checkEqual(menu); break;
+                   if(checkEqual(menu) == true)
+                   {
+                       System.out.println("\nTwo menu items are equal.\n");
+                   }
+                   else
+                   {
+                       System.out.println("\nTwo menu items are not equal.\n");
 
+                   }
+                    break;
                 case 6:
                     end = false;
                     break;
@@ -189,12 +201,22 @@ public class Menu {
 
     }
 
-//    public static boolean checkEqual(ArrayList<MenuItem> wholeMenu)
-//    {
-//        System.out.println("\nAvailable Dishes\n");
-//        displayDishes(wholeMenu);
-//        System.out.println("");
-//        return False;
-//    }
+    public static boolean checkEqual(ArrayList<MenuItem> wholeMenu)
+    {
+        System.out.println("\nAvailable Dishes\n");
+        displayDishes(wholeMenu);
+        System.out.print("Select first dish: ");
+        Scanner sc1 = new Scanner(System.in);
+        String firstchoice = sc1.nextLine();
+        System.out.print("Select second dish: ");
+        Scanner sc2 = new Scanner(System.in);
+        String secondchoice = sc2.nextLine();
+
+        if (firstchoice.equals(secondchoice))
+        {
+            return true;
+        }
+        return false;
+    }
 
 }
